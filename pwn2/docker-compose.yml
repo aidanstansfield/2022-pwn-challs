@@ -1,0 +1,6 @@
+version: '3'
+services:
+ pwn2:
+   build: .
+   ports:
+       - 9002:9002

@@ -1,0 +1,10 @@
+version: '3'
+services:
+ pwn-1:
+   build: .
+   ports:
+       - 8999:8999
+
+networks:
+  default:
+    name: pwn-1_default

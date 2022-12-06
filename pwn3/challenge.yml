@@ -1,0 +1,65 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "pwn3"
+author: "deluqs"
+category: pwn
+description: |-
+  We have developed a tool to determine the Hamming Distance between two DNA strands (e.g. ACGCG and AGTCG have a hamming distance of 2). Our DevSecOps engineer mentioned that it potentially contains a security flaw. See if you can find and exploit it to obtain a shell.
+  
+  Author: deluqs
+value: 350
+type: standard
+connection_info: nc localhost 9003
+healthcheck: ./healthcheck.py
+
+# Flags specify answers that your challenge use. You should generally provide at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries of CTFd API data
+flags:
+    # A static case sensitive flag
+    - flag{R3turn-0r13nT3d-pwn1ng}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+# Accepts strings
+topics:
+    - Binary Exploitation
+    - pwn
+    - buffer overflow
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+# Accepts strings
+tags:
+    - c
+    - amd64
+
+#   hints:
+#     - hint: What security features of the binary are disabled?
+#       start_released: true  # Unreleased hints can be either given to teams directly by mentors or released to everyone
+#     - hint: This challenge will require you to chain multiple returns together
+#       start_released: false
+#       note: small hint
+#     - hint: Is it possible to leak a known value from the running libc?
+#       note: medium hint
+#       start_released: false
+#     - hint: Note that some libc functions (like system) require correct stack alignment to work
+#       note: if teams have got to the end but the final system payload rop chain isn't working, give this hint
+#       start_released: false
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - dist/pwn3
+    - dist/libc.so.6
+
+# The state of the challenge.
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

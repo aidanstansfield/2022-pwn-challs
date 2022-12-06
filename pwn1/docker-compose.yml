@@ -1,0 +1,6 @@
+version: '3'
+services:
+ pwn1:
+   build: .
+   ports:
+       - 9001:9001

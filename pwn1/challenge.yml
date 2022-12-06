@@ -1,0 +1,60 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "pwn1"
+author: "deluqs"
+category: pwn
+description: |-
+  Our tool to find substrings is reportedly vulnerable. See if you can exploit it to obtain a shell.
+
+  Author: deluqs
+value: 200
+type: standard
+connection_info: nc localhost 9001
+healthcheck: ./healthcheck.py
+
+# Flags specify answers that your challenge use. You should generally provide at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries of CTFd API data
+flags:
+    # A static case sensitive flag
+    - flag{i-l1k3-$H3llz}
+
+# Topics are used to help tell what techniques/information a challenge involves
+# They are generally only visible to admins
+# Accepts strings
+topics:
+    - Binary Exploitation
+    - pwn
+    - buffer overflow
+
+# Tags are used to provide additional public tagging to a challenge
+# Can be removed if unused
+# Accepts strings
+tags:
+    - c
+    - i386
+
+#    - hint: What security features of the binary are disabled?
+#       start_released: true  # Unreleased hints can be either given to teams directly by mentors or released to everyone
+#     - hint: What does disabling the NX bit allow an attacker to do?
+#       note: small hint
+#       start_released: false
+#     - hint: What is the memory address of the needle relative to the haystack?
+#       note: big hint, useful for struggling teams
+#       start_released: false
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - dist/pwn1
+
+# The state of the challenge.
+# If the field is omitted, the challenge is visible by default.
+# If provided, the field can take one of two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"
